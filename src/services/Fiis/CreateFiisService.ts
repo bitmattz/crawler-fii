@@ -12,10 +12,11 @@ class CreateFiisService{
         });
 
         if(fiis){
-            throw new AppError('Fii já cadastrado',400);
+            console.log("fii já cadastrado")
         }
-
-        await fiisRepository.save(fii);
+        else{
+            await fiisRepository.save(fii);
+        }
 
         return fii;  
     }

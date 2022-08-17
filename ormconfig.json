@@ -5,6 +5,7 @@
 	"username": "postgres",
 	"password": "1740",
 	"database": "fii_data",
+  "schema": "public",
     "entities": [
         "./src/models/*.ts"
     

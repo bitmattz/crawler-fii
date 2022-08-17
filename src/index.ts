@@ -4,7 +4,7 @@ export default async function index(){
   const crawler = new CrawlerFiis();
 
   await crawler.execute();
-    
-      
+
+  
 }
 
