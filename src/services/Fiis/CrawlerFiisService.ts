@@ -32,6 +32,7 @@ class CrawlerFiisService{
               });
               // @ts-ignore: Unreachable code error
               trs.push(tds);
+
             });
             return trs;
             
@@ -39,9 +40,11 @@ class CrawlerFiisService{
 
 
         await browser.close();
-        html.map(fii => async ()=>{
-            const newFii:Fiis = new Fiis();
-            
+        
+        html.map(fii => {
+            const newFii = new Fiis();
+            const createFii = new CreateFiisService();
+
             newFii.codigo = fii[0];
             newFii.setor = fii[1];
             newFii.preco_atual = textToNumber(fii[2]);
@@ -59,23 +62,11 @@ class CrawlerFiisService{
             newFii.vacancia_fisica = textToNumber(fii[23]);
             newFii.vacancia_financeira = textToNumber(fii[24]);
             newFii.quantidade_de_ativos = textToNumber(fii[25]);
-            const createFii = new CreateFiisService();
-            const fiisRepository = getRepository(Fiis);
 
-            const fiis = await fiisRepository.findOne({
-              where: {
-                  codigo: newFii.codigo
-              }
-            });
-  
-            if(fiis){
-                throw new AppError('Fii já cadastrado',400);
-            }
-            
             createFii.execute(newFii);
+            
     
         });
-
         return "Crawling realizado com sucesso";
         
     }
