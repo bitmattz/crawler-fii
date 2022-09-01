@@ -54,7 +54,7 @@ class CrawlerFiisService{
             newFii.variacao_preco = textToNumber(fii[13]);
             newFii.rentabilidade_periodo = textToNumber(fii[14]);
             newFii.rentabilidade_acumulada = textToNumber(fii[15]);
-            newFii.patrimonio_liquido = textToNumber(fii[16]);
+            newFii.patrimonio_liquido =fii[16];
             newFii.vpa = textToNumber(fii[17]);
             newFii.p_vpa = textToNumber(fii[18]);
             newFii.dy_patrimonial = textToNumber(fii[19]);
@@ -62,7 +62,6 @@ class CrawlerFiisService{
             newFii.vacancia_fisica = textToNumber(fii[23]);
             newFii.vacancia_financeira = textToNumber(fii[24]);
             newFii.quantidade_de_ativos = textToNumber(fii[25]);
-
             createFii.execute(newFii);
             
     

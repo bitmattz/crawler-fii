@@ -46,7 +46,7 @@ export class CreateFiiTable1651240744769 implements MigrationInterface {
                       },
                       {
                         name: 'patrimonio_liquido',
-                        type: 'float',
+                        type: 'varchar',
                       },
                       {
                         name: 'vpa',

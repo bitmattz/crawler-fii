@@ -31,7 +31,7 @@ export default class Fiis{
     rentabilidade_acumulada: number;
 
     @Column()
-    patrimonio_liquido: number;
+    patrimonio_liquido: string;
 
     @Column()
     vpa: number;
